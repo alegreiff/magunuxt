@@ -3,7 +3,7 @@
     <div>
       <logo/>
       <h1 class="title">
-        magapi
+        MaguaRED - Cultura
       </h1>
       <h2 class="subtitle">
         My superior Nuxt.js project
