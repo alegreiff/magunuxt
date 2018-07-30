@@ -1,16 +1,50 @@
+@import 'fonts'; 
+$blanco: #fff;
+$small: 28rem;
+$medium: 55rem;
+$large: 65rem;
 body{
-    background: lime;
+    background: $blanco;
 }
-section.container{
-    width: 90vw;
-    margin: 0 auto;
+section.container .entrada-comp{
+    background: darken($blanco, 0%);
+    width: 98vw;
+    margin: 1em auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1em;
+    @media only screen and (min-width: $small){
+        background: darken($blanco, 0%);
+        grid-template-columns: 1fr 1fr;
+        width: 96vw;
+    }
+    @media only screen and (min-width: $medium){
+        background: darken($blanco, 0%);
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 92vw;
+    }
+    @media only screen and (min-width: $large){
+        background: darken($blanco, 0%);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 90vw;
+        max-width: 1600px;
+    }
+
     h3{
-        background: red;
+        background: rgb(131, 140, 223);
         height: 70px;
+
         color: #fff;
+        padding: 0.5em;
+        //font-size: calc(8px + 0.5vw);
+        @include fluid-type(font-size, 400px, 1600px, 10px, 16px);
+
+    }
+    .entrada{
+        background: rgb(131, 140, 223);
+        padding: 0.5em;
+        border-radius: 5px;
+        
     }
     .entrada img{
         max-width: 100%;

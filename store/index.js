@@ -13,13 +13,13 @@ const createStore= () =>{
         actions: {
             nuxtServerInit(vuexContext, context) {
                 return context.app.$axios
-                  .$get("/posts?_embed")
+                  .$get("/posts?_embed&per_page=6")
                   .then(data => {
                     const postsArray = [];
                     for (const key in data) {
                       postsArray.push({ ...data[key], id: key });
                     }
-                    vuexContext.commit("setEntradas", postsArray);
+                    vuexContext.commit("setEntradas", data);
                   })
                   .catch(e => context.error(e));
               },
