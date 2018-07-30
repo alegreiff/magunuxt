@@ -3,7 +3,8 @@ const createStore= () =>{
     return new Vuex.Store({
         state: {
             nombre: 'Jaime de Greiff',
-            entradasRecientes: []
+            entradasRecientes: [],
+            posts: []
         },
         mutations: {
             setEntradas(state, entradas){
@@ -13,13 +14,13 @@ const createStore= () =>{
         actions: {
             nuxtServerInit(vuexContext, context) {
                 return context.app.$axios
-                  .$get("/posts?_embed&per_page=6")
+                  .$get("/posts?_embed&per_page=21")
                   .then(data => {
                     const postsArray = [];
                     for (const key in data) {
                       postsArray.push({ ...data[key], id: key });
                     }
-                    vuexContext.commit("setEntradas", data);
+                    vuexContext.commit("setEntradas", postsArray);
                   })
                   .catch(e => context.error(e));
               },

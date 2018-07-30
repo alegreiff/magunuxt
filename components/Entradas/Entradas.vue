@@ -1,7 +1,9 @@
 <template>
     <div class="entrada-comp">
         <div class="entrada" v-for="post in entradas" :key="post.id">
-        <h3 v-html="post.title.rendered"></h3>
+        <h3>
+            <FitTexto  :targetLineCount="parseInt(3)" v-html="post.title.rendered"></FitTexto>
+        </h3>
         <img :src="post._embedded['wp:featuredmedia'][0].source_url" alt="">
       </div>
     </div>

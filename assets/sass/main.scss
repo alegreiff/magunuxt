@@ -1,52 +1,69 @@
-@import 'fonts'; 
+@import 'responsive';
+@import 'fonts';
 $blanco: #fff;
+$rojo: red;
 $small: 28rem;
 $medium: 55rem;
 $large: 65rem;
-body{
-    background: $blanco;
+body {
+    background: $rojo;
+    @include sm {
+        // 576px window width and more
+        background: lime;
+    }
+    @include md {
+        // 768px window width and more
+        background: yellowgreen;
+    }
+    @include lg {
+        // 992px window width and more
+        background: palevioletred;
+    }
+    @include xl {
+        // 1200px window width and more
+        background: green;
+    }
 }
-section.container .entrada-comp{
+
+section.container .entrada-comp {
     background: darken($blanco, 0%);
     width: 98vw;
     margin: 1em auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1em;
-    @media only screen and (min-width: $small){
+
+    @include md {
         background: darken($blanco, 0%);
         grid-template-columns: 1fr 1fr;
         width: 96vw;
     }
-    @media only screen and (min-width: $medium){
+    @include lg {
         background: darken($blanco, 0%);
         grid-template-columns: 1fr 1fr 1fr;
         width: 92vw;
     }
-    @media only screen and (min-width: $large){
+    @include xl {
         background: darken($blanco, 0%);
         grid-template-columns: 1fr 1fr 1fr 1fr;
         width: 90vw;
         max-width: 1600px;
     }
 
-    h3{
+    h3 {
         background: rgb(131, 140, 223);
-        height: 70px;
-
+        height: 90px;
         color: #fff;
-        padding: 0.5em;
-        //font-size: calc(8px + 0.5vw);
-        @include fluid-type(font-size, 400px, 1600px, 10px, 16px);
-
+        padding: 0.5em; //font-size: calc(8px + 0.5vw);
+        @include fluid-type(font-size, 400px, 1600px, 12px, 16px);
     }
-    .entrada{
+    .entrada {
         background: rgb(131, 140, 223);
         padding: 0.5em;
         border-radius: 5px;
-        
     }
-    .entrada img{
+    .entrada img {
         max-width: 100%;
+        /*border-radius: 16px;*/
     }
 }
