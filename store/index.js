@@ -14,7 +14,7 @@ const createStore= () =>{
         actions: {
             nuxtServerInit(vuexContext, context) {
                 return context.app.$axios
-                  .$get("/posts?_embed&per_page=21")
+                  .$get("/posts?_embed&per_page=10")
                   .then(data => {
                     const postsArray = [];
                     for (const key in data) {

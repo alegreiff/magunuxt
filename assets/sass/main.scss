@@ -67,3 +67,14 @@ section.container .entrada-comp {
         /*border-radius: 16px;*/
     }
 }
+
+
+
+.retinalatina{
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.retinalatina-film img{
+    max-width: 200px;
+}
